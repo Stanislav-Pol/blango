@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Index Template</h2>
+<a href="page2.html" class="btn btn-primary">The second page<a>
+<hr>
+<button type="button" class="btn btn-primary">Primary</button>
+<a href="#" class="btn btn-secondary">Secondary</a>
+<button type="button" class="btn btn-danger">Danger</button>
+<div>Example index file</div>
+<br>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    BootStrap Dropdown
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Item 1</a></li>
+    <li><a class="dropdown-item" href="#">Item 2</a></li>
+    <li><a class="dropdown-item" href="#">Item 3</a></li>
+  </ul>
+</div>
+<div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+{% endblock %}
