@@ -12,10 +12,12 @@
         {{ post.content|safe }}
     </div>
 {% endrow %}
+{% include "blog/post-comments.html" %}
 <a href={% url "index" %}>Back to the blog list</a>
 {% row %}
     {% col %}
         {% recent_posts post %}
     {% endcol %}
 {% endrow %}
+
 {% endblock %}
