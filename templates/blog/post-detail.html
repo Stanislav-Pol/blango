@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load blog_extras %}
+{% load blog_extras cache %}
 {% block content %}
 <h2>{{ post.title }}</h2>
 {% row %}
@@ -16,7 +16,9 @@
 <a href={% url "index" %}>Back to the blog list</a>
 {% row %}
     {% col %}
-        {% recent_posts post %}
+        {% cache 360 recent_post post %}
+            {% recent_posts post %}
+        {% endcache %}
     {% endcol %}
 {% endrow %}
 

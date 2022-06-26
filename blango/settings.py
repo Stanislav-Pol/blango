@@ -177,6 +177,14 @@ class Dev(Configuration):
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+    #Cache setup
+    CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+        }
+    }
+
 class Prod(Dev):
   DEBUG = False
   SECRET_KEY = values.SecretValue()
