@@ -42,6 +42,7 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'blango_auth',
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
@@ -59,6 +60,8 @@ class Dev(Configuration):
         #'django.middleware.clickjacking.XFrameOptionsMiddleware',
         
     ]
+
+    AUTH_USER_MODEL = "blango_auth.User"
 
     #DjDT allowed IP
     INTERNAL_IPS = ["192.168.10.93"]
