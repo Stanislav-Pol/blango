@@ -19,6 +19,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 import blog.views
+import blango_auth.views
+from blango_auth.forms import BlangoRegistrationForm
+
+from django_registration.backends.activation.views import RegistrationView
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +33,15 @@ urlpatterns = [
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
     path('page2.html', blog.views.page2),
     path("ip/", blog.views.get_ip),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/profile/", blango_auth.views.profile, name="profile"),
+    path(
+        "accounts/register/",
+        RegistrationView.as_view(form_class=BlangoRegistrationForm),
+        name="django_registration_register",
+    ),
+    path('accounts/', include('django_registration.backends.activation.urls')),
+    #path('logout/', django.contrib.auth.views.logout, name='logout'),
 ]
 
 #Add DjDT on DEBUG mode only
